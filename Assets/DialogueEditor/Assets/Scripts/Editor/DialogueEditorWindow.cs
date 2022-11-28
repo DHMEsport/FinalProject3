@@ -54,7 +54,7 @@ namespace DialogueEditor
         public const float START_PANEL_WIDTH = 250;
         private const float PANEL_RESIZER_PADDING = 5;
         private const string WINDOW_NAME = "DIALOGUE_EDITOR_WINDOW";
-        private const string HELP_URL = "https://josephbarber96.github.io/dialogueeditor.html";
+        private const string HELP_URL = "https://grasshopdev.github.io/dialogueeditor.html";
         private const string CONTROL_NAME = "DEFAULT_CONTROL";
         public const int MIN_PANEL_WIDTH = 180;
         private const string UNAVAILABLE_DURING_PLAY_TEXT = "Dialogue Editor unavaiable during play mode.";
