@@ -31,16 +31,16 @@ public class EnemyMove : MonoBehaviour
     {
       gc = go.GetComponent<GameContoller>();
     }
-    StartCoroutine(setdistance());
+    StartCoroutine(Setdistance());
     enemynevmesh = GetComponent<NavMeshAgent>();
   }
   
   void Update()
   {
-    setdistance();
+    Setdistance();
   }
 
-  IEnumerator setdistance()
+  IEnumerator Setdistance()
   {
     float distance = Vector3.Distance(playergameobject.position, transform.position);
     if (Vector3.Distance(transform.position, playergameobject.position) > minimumdistance)
@@ -63,7 +63,7 @@ public class EnemyMove : MonoBehaviour
   }
   
 
-  private void nTriggerEnter(Collider col)
+  private void OnTriggerEnter(Collider col)
   {
     if (col.CompareTag("Player"))
     {

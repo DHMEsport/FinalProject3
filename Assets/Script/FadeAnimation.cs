@@ -18,11 +18,13 @@ using UnityEngine;
         public IEnumerator FadeClean()
         {
             isFading = true;
-            _animator.SetTrigger("FadeIn");
+            // _animator.SetTrigger("FadeIn");
+            _animator.SetTrigger("FadeIn2");
             while (isFading)
             {
                 Debug.Log("Now is Fading go to next the scene");
             }
+            
             yield return null;
         }
 

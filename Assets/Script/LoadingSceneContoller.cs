@@ -20,7 +20,8 @@ public class LoadingSceneContoller : Singalton<LoadingSceneContoller>
 
         while (!unloadOp.isDone)
         {
-            yield return null;
+            Debug.Log("upload is not done");
+            yield return new  WaitForSeconds(2f);
         }
 
         
@@ -28,7 +29,8 @@ public class LoadingSceneContoller : Singalton<LoadingSceneContoller>
         loadOp.allowSceneActivation = true;
         while (!loadOp.isDone)
         {
-            yield return null;
+            Debug.Log("load is not done");
+            yield return new  WaitForSeconds(2f);
         }
         
         

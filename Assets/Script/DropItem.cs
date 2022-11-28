@@ -13,21 +13,12 @@ public class DropItem : MonoBehaviour
       _inventory = GameObject.FindGameObjectWithTag("Player").GetComponent<Inventory>();
    }
 
-   private void Update()
+   private void FixedUpdate()
    {
       if (transform.childCount<=0)
       {
          _inventory.isFull[item] = false;
+         Debug.Log("Item is not full");
       }
-   }
-
-   public void Drop()
-   {
-      foreach (Transform child in transform)
-      {
-         child.GetComponent<SpawnDrop>().SpawnDropItem();
-         GameObject.Destroy(child.gameObject); 
-      }
-      
    }
 }

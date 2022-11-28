@@ -22,6 +22,8 @@ public class PlayerContorller : MonoBehaviour
     private Animator _animator;
     private GameContoller gc;
     private Rigidbody rb;
+    private Inventory _inventory; 
+    private int item;
     private void Start()
   {
         rb = GetComponent<Rigidbody>();
@@ -34,12 +36,13 @@ public class PlayerContorller : MonoBehaviour
         objwepon = pivoit.GetChild(0).gameObject;
         _colliderwepon = objwepon.GetComponent<BoxCollider>();
         _colliderwepon.enabled = false;
-       
+        _inventory = GameObject.FindGameObjectWithTag("Player").GetComponent<Inventory>();
   }
     void Update()
     {
         OnClickAttck();
         OnMove();
+        
     }
  
     private void OnClickAttck()
@@ -111,5 +114,19 @@ public class PlayerContorller : MonoBehaviour
             Debug.Log("knock");
         }
         
+    }
+
+    private void inventory()
+    {
+        if (transform.childCount<=0)
+        {
+            _inventory.isFull[item] = false;
+            Debug.Log("Item is not full");
+        }
+    }
+
+    private void LateUpdate()
+    {
+        inventory();
     }
 }
