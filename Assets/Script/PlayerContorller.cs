@@ -14,7 +14,6 @@ public class PlayerContorller : MonoBehaviour
     [SerializeField] private int _speedRun;
     [SerializeField] private float isjumping;
     [SerializeField] private float knockbackforce;
-    [SerializeField] private Transform knockback;
     BoxCollider _colliderwepon;
     private GameObject objwepon;
     [SerializeField] Transform pivoit;
@@ -111,5 +110,6 @@ public class PlayerContorller : MonoBehaviour
             rb.AddForce((Vector3.one) * knockbackforce,ForceMode.Impulse);
             Debug.Log("knock");
         }
+        
     }
 }

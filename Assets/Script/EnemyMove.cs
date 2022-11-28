@@ -31,7 +31,6 @@ public class EnemyMove : MonoBehaviour
     {
       gc = go.GetComponent<GameContoller>();
     }
-
     StartCoroutine(setdistance());
     enemynevmesh = GetComponent<NavMeshAgent>();
   }
@@ -55,31 +54,6 @@ public class EnemyMove : MonoBehaviour
       }
     }
   }
-
-//   private bool isattcking;
-//   private void Start()
-//   {
-//     GameObject go = GameObject.FindGameObjectWithTag("GameController");
-//     if (go != null)
-//     {
-//       gc = go.GetComponent<GameContoller>();
-//     }
-//   }
-//
-//   private void Update()
-//   {
-//     float distance = Vector3.Distance(playertarget.position, transform.position);
-//     if (Vector3.Distance(transform.position,playertarget.position)>minimumdistance)
-//     {
-//       if (distance <= lookRadius)
-//       {
-//         transform.position = Vector3.MoveTowards(transform.position, playertarget.position, speed * Time.deltaTime);
-//         facetarget();
-//         Debug.Log("See target");
-//       }
-//     }
-//   }
-//
   void facetarget()
   {
     Vector3 direction = (playergameobject.position - transform.position).normalized;
@@ -87,8 +61,7 @@ public class EnemyMove : MonoBehaviour
     transform.rotation = Quaternion.Slerp(transform.rotation, lookrotation, Time.deltaTime);
     Debug.Log("face is rotation to player");
   }
-//   
-//   
+  
 
   private void nTriggerEnter(Collider col)
   {
